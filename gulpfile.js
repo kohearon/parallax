@@ -39,7 +39,17 @@ gulp.task('html', function(){
 });
 
 gulp.task('webserver', function() {
-  connect.server();
+  connect.server({
+    livereload: true,
+    root: 'dist',
+  });
 });
 
-gulp.task('default', ['styles', 'scripts', 'html', 'webserver'], function(){});
+/* Watch Task For All Others */
+gulp.task('watch', function(){
+  gulp.watch('index.html', ['html']);
+  gulp.watch('index.js', ['scripts']);
+  gulp.watch('index.scss', ['styles']);
+});
+
+gulp.task('default', ['styles', 'scripts', 'html', 'webserver', 'watch'], function(){});

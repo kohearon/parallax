@@ -4,6 +4,7 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 var minify = require('gulp-minify');
+var htmlmin = require('gulp-htmlmin');
 
 var plugins = [
      autoprefixer({browsers: ['last 1 version']}),
@@ -28,4 +29,12 @@ gulp.task('scripts', function(){
     .pipe(gulp.dest('dist/'))
 });
 
-gulp.task('default', ['styles', 'scripts'], function(){});
+gulp.task('html', function(){
+  return gulp.src('index.html')
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
+    .pipe(gulp.dest('dist/'))
+});
+
+gulp.task('default', ['styles', 'scripts', 'html'], function(){});

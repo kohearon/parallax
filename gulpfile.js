@@ -5,6 +5,7 @@ var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 var minify = require('gulp-minify');
 var htmlmin = require('gulp-htmlmin');
+var connect = require('gulp-connect');
 
 var plugins = [
      autoprefixer({browsers: ['last 1 version']}),
@@ -37,4 +38,8 @@ gulp.task('html', function(){
     .pipe(gulp.dest('dist/'))
 });
 
-gulp.task('default', ['styles', 'scripts', 'html'], function(){});
+gulp.task('webserver', function() {
+  connect.server();
+});
+
+gulp.task('default', ['styles', 'scripts', 'html', 'webserver'], function(){});

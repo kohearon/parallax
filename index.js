@@ -6,7 +6,7 @@ function parallaxText(){
   const topOfImage = document.querySelector('.parallax__main-image').offsetTop;
   const topOfPage = window.pageYOffset;
 
-  document.querySelector('.parallax__text-container').style.transform = `translateY(${ -0.1 * topOfPage }px)`
+  document.querySelector('.parallax__text-container').style.transform = `translateY(${ -0.05 * topOfPage }px)`
 }
 
 document.addEventListener('scroll', parallaxImages);
@@ -22,7 +22,7 @@ function parallaxImages(){
   */
   if (topOfPage > ( topOfImage - 700 ) ) {
 
-    document.querySelector('.second-parallax__secondary-image').style.transform = `translateY(${ -0.1 * topOfPage }px)`
+    document.querySelector('.second-parallax__secondary-image').style.transform = `translateY(${ -0.05 * topOfPage }px)`
   }
 }
 
@@ -52,7 +52,7 @@ function parallaxPackagingText(){
   /* If The User's Window Is At The Top of The Image,
   ** Start Parallax Until Image Reach The Top of The User's Screen
   */
- document.querySelector('.third-parallax__text-container').style.transform = `translateY(${ -0.1 * topOfPage }px)`
+ document.querySelector('.third-parallax__text-container').style.transform = `translateY(${ -0.05 * topOfPage }px)`
 
 }
 

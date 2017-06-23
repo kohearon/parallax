@@ -107,7 +107,7 @@ body {
   }
 }
 
-.lets-talk{
+.lets-talk {
   background-color: #F3F3F3;
   grid-column-start: 1;
   grid-column-end: 15;
@@ -117,18 +117,24 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease;
 
   &__heading-text{
+    opacity: 0;
     text-align: center;
     font-size: 30px;
   }
 
   &__text{
+    opacity: 0;
     font-size: 16px;
     text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   &__button {
+    opacity: 0;
     background: #DD001B;
     box-shadow: 0 2px 20px 0 rgba(0,0,0,0.19);
     border: none;
@@ -137,6 +143,7 @@ body {
     color: #FFFFFF;
     letter-spacing: 1px;
     padding: 10px 30px;
+    margin-top: 30px;
   }
 }
 

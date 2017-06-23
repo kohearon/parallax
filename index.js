@@ -43,7 +43,7 @@ function parallaxDivider(){
 
 document.addEventListener('scroll', parallaxPackagingText);
 
-function parallaxDivider(){
+function parallaxPackagingText(){
 
   /* Get Position of Top of Image, Top of User's Window */
   const topOfImage = document.querySelector('.third-parallax__main-image').offsetTop;
@@ -53,5 +53,24 @@ function parallaxDivider(){
   ** Start Parallax Until Image Reach The Top of The User's Screen
   */
  document.querySelector('.third-parallax__text-container').style.transform = `translateY(${ -0.1 * topOfPage }px)`
+
+}
+
+document.addEventListener('scroll', letsTalkFadeIn);
+
+function letsTalkFadeIn(){
+
+  /* Get Position of Top of Image, Top of User's Window */
+  const topOfImage = document.querySelector('.lets-talk').offsetTop;
+  const topOfPage = window.pageYOffset;
+
+  if ( topOfPage > ( topOfImage - 650) ) {
+    console.log("HELLO");
+    document.querySelector('.lets-talk__heading-text').style.opacity = 1;
+    document.querySelectorAll('.lets-talk__text').forEach( function( textBlock) {
+      textBlock.style.opacity = 1;
+    });
+    document.querySelector('.lets-talk__button').style.opacity = 1;
+  }
 
 }

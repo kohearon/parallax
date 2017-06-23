@@ -52,6 +52,6 @@ function parallaxDivider(){
   /* If The User's Window Is At The Top of The Image,
   ** Start Parallax Until Image Reach The Top of The User's Screen
   */
- document.querySelector('.third-parallax__text-container').style.transform = `translateY(${ -0.05 * topOfPage }px)`
+ document.querySelector('.third-parallax__text-container').style.transform = `translateY(${ -0.1 * topOfPage }px)`
 
 }

@@ -106,3 +106,36 @@ body {
     padding-right: 33px;
   }
 }
+
+.lets-talk{
+  background-color: #F3F3F3;
+  grid-column-start: 1;
+  grid-column-end: 15;
+  grid-row-start: 34;
+  grid-row-end: 41;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__heading-text{
+    text-align: center;
+    font-size: 30px;
+  }
+
+  &__text{
+    font-size: 16px;
+    text-align: center;
+  }
+
+  &__button {
+    background: #DD001B;
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.19);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    padding: 10px 30px;
+  }
+}

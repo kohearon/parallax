@@ -5,6 +5,7 @@ var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 var minify = require('gulp-minify');
 var htmlmin = require('gulp-htmlmin');
+var svgmin = require('gulp-svgmin');
 var connect = require('gulp-connect');
 
 var plugins = [
@@ -38,6 +39,12 @@ gulp.task('html', function(){
     .pipe(gulp.dest('dist/'))
 });
 
+gulp.task('svg', function(){
+  return gulp.src('*.svg')
+    .pipe(svgmin())
+    .pipe(gulp.dest('dist/'))
+});
+
 gulp.task('webserver', function() {
   connect.server({
     livereload: true,
@@ -50,6 +57,7 @@ gulp.task('watch', function(){
   gulp.watch('index.html', ['html']);
   gulp.watch('index.js', ['scripts']);
   gulp.watch('index.scss', ['styles']);
+  gulp.watch('*.svg', ['svg']);
 });
 
-gulp.task('default', ['styles', 'scripts', 'html', 'webserver', 'watch'], function(){});
+gulp.task('default', ['styles', 'scripts', 'html', 'svg','webserver', 'watch'], function(){});

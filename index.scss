@@ -41,10 +41,16 @@
   }
 }
 
+.section-divider{
+
+}
+
 .second-parallax{
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  background: url('section-divider.svg');
+  background-repeat: no-repeat;
 
   &__container{
     display: grid;

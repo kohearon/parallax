@@ -65,12 +65,17 @@ function letsTalkFadeIn(){
   const topOfPage = window.pageYOffset;
 
   if ( topOfPage > ( topOfImage - 650) ) {
-    console.log("HELLO");
+
     document.querySelector('.lets-talk__heading-text').style.opacity = 1;
+    document.querySelector('.lets-talk__heading-text').style.transform = 'translateY(0)';
+
     document.querySelectorAll('.lets-talk__text').forEach( function( textBlock) {
       textBlock.style.opacity = 1;
+      textBlock.style.transform = 'translateY(0)';
     });
+
     document.querySelector('.lets-talk__button').style.opacity = 1;
+    document.querySelector('.lets-talk__button').style.transform = 'translateY(0)';
   }
 
 }

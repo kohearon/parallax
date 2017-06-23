@@ -1,4 +1,4 @@
-# parallax
+# Parallax
 Playing around with parallax effects in vanilla javascript with CSS3 grid layouts.
 
 ## Getting Started

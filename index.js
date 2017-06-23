@@ -64,7 +64,7 @@ function letsTalkFadeIn(){
   const topOfImage = document.querySelector('.lets-talk').offsetTop;
   const topOfPage = window.pageYOffset;
 
-  if ( topOfPage > ( topOfImage - 650) ) {
+  if ( topOfPage > ( topOfImage - 800) ) {
 
     document.querySelector('.lets-talk__heading-text').style.opacity = 1;
     document.querySelector('.lets-talk__heading-text').style.transform = 'translateY(0)';

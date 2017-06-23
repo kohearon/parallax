@@ -6,7 +6,7 @@ function parallaxText(){
   const topOfImage = document.querySelector('.parallax__main-image').offsetTop;
   const topOfPage = window.pageYOffset;
 
-  document.querySelector('.parallax__text-container').style.transform = `translateY(${ -0.1 * topOfPage - 400 }px)`
+  document.querySelector('.parallax__text-container').style.transform = `translateY(${ -0.1 * topOfPage }px)`
 }
 
 document.addEventListener('scroll', parallaxImages);

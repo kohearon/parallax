@@ -40,3 +40,18 @@ function parallaxDivider(){
  document.querySelector('.section-divider').style.transform = `translateY(${ -0.05 * topOfPage }px)`
 
 }
+
+document.addEventListener('scroll', parallaxPackagingText);
+
+function parallaxDivider(){
+
+  /* Get Position of Top of Image, Top of User's Window */
+  const topOfImage = document.querySelector('.third-parallax__main-image').offsetTop;
+  const topOfPage = window.pageYOffset;
+
+  /* If The User's Window Is At The Top of The Image,
+  ** Start Parallax Until Image Reach The Top of The User's Screen
+  */
+ document.querySelector('.third-parallax__text-container').style.transform = `translateY(${ -0.05 * topOfPage }px)`
+
+}

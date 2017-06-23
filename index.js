@@ -22,6 +22,6 @@ function parallaxImages(){
   */
   if (topOfPage > ( topOfImage - 700 ) ) {
 
-    document.querySelector('.second-parallax__secondary-image').style.transform = `translateY(${ -0.1 * topOfPage - 130 }px)`
+    document.querySelector('.second-parallax__secondary-image').style.transform = `translateY(${ -0.1 * topOfPage }px)`
   }
 }

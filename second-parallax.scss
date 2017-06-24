@@ -1,0 +1,24 @@
+.second-parallax{
+
+  &__main-image{
+    grid-column-start: 8;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 11;
+  }
+
+  &__secondary-image{
+    grid-column-start: 7;
+    grid-column-end: 10;
+    grid-row-start: 20;
+    grid-row-end: 27;
+    transition: all 0.15s ease;
+  }
+
+  &__text-container{
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 15;
+    grid-row-end: 19;
+  }
+}

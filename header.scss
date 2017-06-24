@@ -13,6 +13,16 @@
     text-transform: uppercase;
     letter-spacing: 1px;
 
+    &:hover {
+      cursor: pointer;
+      color: white;
+      background: #DD001B;
+      box-shadow: 0 2px 20px 0 rgba(0,0,0,0.19);
+      border: none;
+      border-radius: 4px;
+      color: #FFFFFF;
+    }
+
     &--active {
       color: white;
       background: #DD001B;

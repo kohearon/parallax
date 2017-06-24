@@ -1,5 +1,6 @@
 @import "header";
 @import "footer";
+@import "parallax";
 
 body {
   margin: 0 auto 0 auto;
@@ -9,45 +10,11 @@ body {
 .grid {
   max-width: 1400px;
   display: grid;
-  grid-template-columns: repeat(14, 80px);
+  grid-template-columns: repeat(12, 80px);
   grid-auto-rows: 50px;
   grid-column-gap: 20px;
   margin-left: auto;
   margin-right: auto;
-}
-
-
-.parallax {
-
-  &__main-image {
-    grid-column-start: 2;
-    grid-column-end: 9;
-    grid-row-start: 3;
-    grid-row-end: 13;
-  }
-
-  &__text-container {
-    grid-column-start: 8;
-    grid-column-end: 12;
-    grid-row-start: 5;
-    grid-row-end: 11;
-    padding: 40px;
-    background-color: #fff;
-    transition: all 0.15s ease;
-  }
-
-  &__heading-text {
-    margin: 0 0 20px 0;
-    font-size: 44px;
-    line-height: 50px;
-    font-weight: normal;
-  }
-
-  &__paragraph-text {
-    margin: 0;
-    line-height: 30px;
-    font-size: 16px;
-  }
 }
 
 .section-divider {

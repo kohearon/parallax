@@ -2,6 +2,7 @@
 @import "footer";
 @import "parallax";
 @import "second-parallax";
+@import "third-parallax";
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -25,37 +26,6 @@ body {
   grid-row-end: 22;
   background-repeat: no-repeat;
   z-index: -1;
-}
-
-.third-parallax{
-
-  &__main-image{
-    grid-row-start: 24;
-    grid-row-end: 34;
-    grid-column-start: 2;
-    grid-column-end: 10;
-  }
-
-  &__text-container {
-    padding-left: 50px;
-    background-color: rgba(0,0,0,0.7);
-    color:white;
-    grid-row-start: 27;
-    grid-row-end: 34;
-    grid-column-start:8;
-    grid-column-end: 14;
-  }
-
-  &__heading-text{
-    margin: 0;
-    padding: 60px 0 14px 0;
-    font-size: 30px;
-  }
-
-  &__text{
-    font-size: 16px;
-    padding-right: 33px;
-  }
 }
 
 .lets-talk {

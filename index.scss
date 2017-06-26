@@ -1,9 +1,9 @@
-@import "header";
-@import "footer";
-@import "parallax";
-@import "second-parallax";
-@import "third-parallax";
-@import "lets-talk";
+@import "./styles/header";
+@import "./styles/snacks";
+@import "./styles/spices";
+@import "./styles/packaging";
+@import "./styles/footer";
+@import "./styles/lets-talk";
 
 body {
   font-family: 'Open Sans', sans-serif;

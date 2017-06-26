@@ -1,34 +1,46 @@
 var gulp = require('gulp');
+var source = require('vinyl-source-stream');
+var browserify = require('browserify');
+var buffer = require("vinyl-buffer");
+var gutil = require("gulp-util");
+
+/* Styles */
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
-var minify = require('gulp-minify');
-var htmlmin = require('gulp-htmlmin');
-var svgmin = require('gulp-svgmin');
-var connect = require('gulp-connect');
-
 var plugins = [
      autoprefixer({browsers: ['last 1 version']}),
      cssnano()
  ];
 
+/* Minification */
+var uglify = require('gulp-uglify');
+var htmlmin = require('gulp-htmlmin');
+var svgmin = require('gulp-svgmin');
+
+/* Development Server */
+var connect = require('gulp-connect');
+
+
 gulp.task('styles', function(){
-  return gulp.src('*.scss')
+  return gulp.src('index.scss')
     .pipe(sass())
     .pipe(postcss(plugins))
     .pipe(gulp.dest('dist/'))
 });
 
 gulp.task('scripts', function(){
-  return gulp.src('index.js')
-    .pipe(minify({
-      noSource: true,
-      ext:{
-        min:'.js'
-      }
-    }))
-    .pipe(gulp.dest('dist/'))
+  var b = browserify({
+    entries: 'index.js',
+  });
+
+  return b.bundle()
+   .pipe(source('index.js'))
+   .pipe(buffer())
+   .pipe(uglify())
+   .on("error", gutil.log)
+   .pipe(gulp.dest('dist/'))
 });
 
 gulp.task('html', function(){
@@ -55,8 +67,8 @@ gulp.task('webserver', function() {
 /* Watch Task For All Others */
 gulp.task('watch', function(){
   gulp.watch('index.html', ['html']);
-  gulp.watch('index.js', ['scripts']);
-  gulp.watch('*.scss', ['styles']);
+  gulp.watch('./scripts/*.js', ['scripts']);
+  gulp.watch('./styles/*.scss', ['styles']);
   gulp.watch('*.svg', ['svg']);
 });
 

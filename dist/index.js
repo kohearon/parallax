@@ -2,7 +2,9 @@
 var parallaxUp = require('./scripts/parallax-up');
 
 document.addEventListener('scroll',function(){
-  parallaxUp('.snacks__text-container')
+  parallaxUp('.snacks__text-container');
+  parallaxUp('.spices__secondary-image');
+  parallaxUp('.packaging__text-container');
 });
 
 },{"./scripts/parallax-up":2}],2:[function(require,module,exports){
@@ -14,7 +16,6 @@ module.exports = function parallaxUp(parallaxItemID){
 
   /* Get Position of Top of Image, Top of User's Window */
   const topOfPage = window.pageYOffset;
-  console.log("HELLO");
   document.querySelector(parallaxItemID).style.transform = `translateY(${ -0.05 * topOfPage }px)`
 }
 

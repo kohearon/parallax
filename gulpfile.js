@@ -17,7 +17,7 @@ var plugins = [
  ];
 
 gulp.task('styles', function(){
-  return gulp.src('*.scss')
+  return gulp.src('index.scss')
     .pipe(sass())
     .pipe(postcss(plugins))
     .pipe(gulp.dest('dist/'))
@@ -65,7 +65,7 @@ gulp.task('webserver', function() {
 gulp.task('watch', function(){
   gulp.watch('index.html', ['html']);
   gulp.watch('index.js', ['scripts']);
-  gulp.watch('*.scss', ['styles']);
+  gulp.watch('./styles/*.scss', ['styles']);
   gulp.watch('*.svg', ['svg']);
 });
 

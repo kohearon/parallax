@@ -1,0 +1,30 @@
+.third-parallax {
+
+  &__main-image{
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 11;
+  }
+
+  &__text-container {
+    padding-left: 50px;
+    background-color: rgba(0,0,0,0.7);
+    color:white;
+    grid-row-start: 4;
+    grid-row-end: 10;
+    grid-column-start:7;
+    grid-column-end: 13;
+  }
+
+  &__heading-text{
+    margin: 0;
+    padding: 60px 0 14px 0;
+    font-size: 30px;
+  }
+
+  &__text{
+    font-size: 16px;
+    padding-right: 33px;
+  }
+}

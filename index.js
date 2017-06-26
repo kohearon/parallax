@@ -1,13 +1,7 @@
-document.addEventListener('scroll', parallaxText);
+var parallaxUp = require('./scripts/parallax-up');
 
-function parallaxText(){
-
-  /* Get Position of Top of Image, Top of User's Window */
-  const topOfImage = document.querySelector('.parallax__main-image').offsetTop;
-  const topOfPage = window.pageYOffset;
-
-  document.querySelector('.parallax__text-container').style.transform = `translateY(${ -0.05 * topOfPage }px)`
-}
+document.addEventListener('scroll', parallaxUp('snacks__text-container'));
+document.addEventListener('scroll', parallaxUp('packaging__text-container'));
 
 document.addEventListener('scroll', parallaxImages);
 
@@ -26,20 +20,7 @@ function parallaxImages(){
   }
 }
 
-document.addEventListener('scroll', parallaxPackagingText);
 
-function parallaxPackagingText(){
-
-  /* Get Position of Top of Image, Top of User's Window */
-  const topOfImage = document.querySelector('.third-parallax__main-image').offsetTop;
-  const topOfPage = window.pageYOffset;
-
-  /* If The User's Window Is At The Top of The Image,
-  ** Start Parallax Until Image Reach The Top of The User's Screen
-  */
- document.querySelector('.third-parallax__text-container').style.transform = `translateY(${ -0.05 * topOfPage }px)`
-
-}
 
 document.addEventListener('scroll', letsTalkFadeIn);
 

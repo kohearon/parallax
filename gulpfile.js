@@ -7,6 +7,9 @@ var minify = require('gulp-minify');
 var htmlmin = require('gulp-htmlmin');
 var svgmin = require('gulp-svgmin');
 var connect = require('gulp-connect');
+var source = require('vinyl-source-stream');
+var browserify = require('browserify');
+var buffer = require("vinyl-buffer");
 
 var plugins = [
      autoprefixer({browsers: ['last 1 version']}),
@@ -21,14 +24,20 @@ gulp.task('styles', function(){
 });
 
 gulp.task('scripts', function(){
-  return gulp.src('index.js')
-    .pipe(minify({
-      noSource: true,
-      ext:{
-        min:'.js'
-      }
-    }))
-    .pipe(gulp.dest('dist/'))
+  var b = browserify({
+    entries: './index.js',
+  });
+
+  return b.bundle()
+   .pipe(source('index.js'))
+   .pipe(buffer())
+   .pipe(minify({
+     ext:{
+       source: false,
+       min:'.js'
+     }
+   }))
+   .pipe(gulp.dest('dist/'))
 });
 
 gulp.task('html', function(){

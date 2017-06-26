@@ -5,6 +5,6 @@
 module.exports = function parallaxUp(parallaxItemID){
 
   /* Get Position of Top of Image, Top of User's Window */
-  const topOfPage = window.pageYOffset;
-  document.querySelector(parallaxItemID).style.transform = `translateY(${ -0.05 * topOfPage }px)`
+  var topOfPage = window.pageYOffset;
+  document.querySelector(parallaxItemID).style.transform = 'translateY(' + (-0.05 * topOfPage) + 'px)'
 }

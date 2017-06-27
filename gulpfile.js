@@ -67,8 +67,8 @@ gulp.task('webserver', function() {
 /* Watch Task For All Others */
 gulp.task('watch', function(){
   gulp.watch('index.html', ['html']);
-  gulp.watch('./scripts/*.js', ['scripts']);
-  gulp.watch('./styles/*.scss', ['styles']);
+  gulp.watch(['./scripts/*.js', 'index.js'], ['scripts']);
+  gulp.watch(['./styles/*.scss', 'index.scss'], ['styles']);
   gulp.watch('*.svg', ['svg']);
 });
 

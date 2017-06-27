@@ -4,30 +4,36 @@
 module.exports = function fixHeaderOnScroll(){
 
   /* Get Offset of Item */
-  var item = document.querySelector('.header');
-  var topOfItem = item.offsetTop;
-  var parentGrid = item.parentNode;
+  var header = document.querySelector('.header');
+  var topOfItem = header.offsetTop;
+  var parentGrid = header.parentNode;
 
   /* Get User's Current Position */
   var topOfWindow = window.scrollY;
 
+  /* Creating Element To Insert Before Header To Avoid Gitters
+  ** When Fixiing Its Position
+  */
+  var headerGrid = document.querySelector('.grid--header');
+  var headerGridPosition = headerGrid.getBoundingClientRect();
+
+  var placeHolder = document.createElement('div');
+  placeHolder.style.width = headerGridPosition.width + "px";
+  placeHolder.style.height = headerGridPosition.height + "px";
+
+  console.log(headerGrid.previousSibling);
   if ( topOfWindow > topOfItem ) {
 
-    /* Fix To Top And Center */
-    parentGrid.style.position = 'fixed';
-    parentGrid.style.left = 0;
-    parentGrid.style.right = 0;
-    parentGrid.style.margin = '0 auto';
-
-    /* Basic Styles */
     parentGrid.style['z-index'] = 1;
     parentGrid.style['background-color'] = 'rgba(0,0,0,.7)';
     parentGrid.style.color = 'white';
 
   } else {
-    parentGrid.style.position = 'static';
+
+    /* Move Back To Original Position And Remove Colors Etc. */
     parentGrid.style['background-color'] = '';
     parentGrid.style['z-index'] = 0;
     parentGrid.style.color = 'black';
+
   }
 }

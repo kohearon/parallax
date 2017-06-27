@@ -16,3 +16,15 @@ document.addEventListener('scroll',function(){
   fixHeaderOnScroll('.header');
 
 });
+
+/* Fading In Entire Webpage */
+window.onload = function(){
+  var childNodes = [].slice.call(document.querySelector('body').children);
+
+  childNodes.forEach( function(item, i) {
+      setTimeout( function() {
+        item.style.opacity = 1;
+        item.style.transform = 'translateY(0)';
+      }, 375 * i );
+  });
+}

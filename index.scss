@@ -10,6 +10,12 @@ body {
   margin: 0;
 }
 
+body > div {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.75s ease;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 80px);
